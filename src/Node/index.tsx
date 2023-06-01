@@ -34,11 +34,13 @@ const Node = function ({
     <>
       <G onDoubleClick={onDoubleClick} onMouseDown={onMouseDown}>
         {data.type === "operation" ? (
-          <OperationNode data={data} isSelected={isSelected} />
+          // <OperationNode data={data} isSelected={isSelected} />
+          <StartEndNode color="blue" data={data} isSelected={isSelected} />
         ) : data.type === "start" || data.type === "end" ? (
-          <StartEndNode data={data} isSelected={isSelected} />
+          <StartEndNode color="yellow" data={data} isSelected={isSelected} />
         ) : (
-          <DecisionNode data={data} isSelected={isSelected} />
+          <StartEndNode color="green" data={data} isSelected={isSelected} />
+          // <DecisionNode data={data} isSelected={isSelected} />
         )}
         {!readonly &&
           Object.keys(position).map((key) => {

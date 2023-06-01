@@ -6,6 +6,7 @@ import { Text } from "./Text";
 const StartEndNode = function ({
   data,
   isSelected = false,
+  color = "white",
 }: NodeProps): JSX.Element {
   const borderColor = isSelected ? "#666666" : "#bbbbbb";
   const halfWidth = (data.width || 120) / 2;
@@ -17,7 +18,7 @@ const StartEndNode = function ({
         cy={data.y + halfHeight}
         rx={halfWidth}
         ry={halfHeight}
-        fill={"white"}
+        fill={color}
         strokeWidth={1}
         stroke={borderColor}
         {...(data.containerProps as SupportedSVGShapeProps)}
